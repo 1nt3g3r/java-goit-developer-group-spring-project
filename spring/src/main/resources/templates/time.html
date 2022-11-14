@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Current time</title>
+</head>
+<body>
+<style>
+    .some-cool-class {
+        font-size: 20px;
+    }
+</style>
+  <h1 th:attr="style='color: red'" th:class="some-cool-class" th:text="${currentTime}"></h1>
+
+  <ul>
+      <li th:each="number : ${randomNumbers}" th:text="${number}"></li>
+  </ul>
+
+    <ul th:if="${requestParams}">
+        <li th:each="requestParam: ${requestParams}">
+            <span th:text="${requestParam.key}"></span>
+            =
+            <span th:text="${requestParam.value}"></span>
+        </li>
+    </ul>
+</body>
+</html>
