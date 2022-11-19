@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Files</title>
+</head>
+<body>
+
+<h1>Uploaded files</h1>
+<ol>
+    <li th:each="file: ${files}" th:text="${file}"></li>
+</ol>
+
+<form action="/file" method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <button type="submit">Send file</button>
+</form>
+</body>
+</html>
