@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -53,5 +54,21 @@ public class UserController {
         userService.deleteById(id);
 
         return UserDto.fromUser(user);
+    }
+
+    @GetMapping("/search")
+    public List<UserDto> search(@RequestParam("query") String query) {
+        return userService
+                .search(query)
+                .stream()
+                .map(UserDto::fromUser)
+                .collect(Collectors.toList());
+    }
+
+    @GetMapping("/count")
+    public Map<String, Object> countAll() {
+        return Map.of(
+                "count", userService.countAll()
+        );
     }
 }

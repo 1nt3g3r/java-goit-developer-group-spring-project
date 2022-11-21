@@ -34,4 +34,14 @@ public class InMemoryUserService implements UserService {
     public synchronized User deleteById(String id) {
         return users.remove(id);
     }
+
+    @Override
+    public List<User> search(String query) {
+        return null;
+    }
+
+    @Override
+    public int countAll() {
+        return 0;
+    }
 }

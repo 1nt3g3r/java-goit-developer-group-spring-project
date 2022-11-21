@@ -7,4 +7,6 @@ public interface UserService {
     User save(User user);
     User getById(String id);
     User deleteById(String id);
+    List<User> search(String query);
+    int countAll();
 }
