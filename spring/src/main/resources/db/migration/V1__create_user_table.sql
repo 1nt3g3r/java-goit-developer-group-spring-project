@@ -1,0 +1,4 @@
+CREATE TABLE "user" (
+    id VARCHAR(255) PRIMARY KEY NOT NULL,
+    name VARCHAR(500)
+)

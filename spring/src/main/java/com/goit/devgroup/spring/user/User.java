@@ -2,9 +2,7 @@ package com.goit.devgroup.spring.user;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Table(name = "\"user\"")
 @Entity

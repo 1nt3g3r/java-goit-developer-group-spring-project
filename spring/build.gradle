@@ -30,7 +30,8 @@ dependencies {
 	//Spring MVC module
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 
-//	implementation 'org.flywaydb:flyway-core'
+	//Migration framework
+	implementation 'org.flywaydb:flyway-core'
 //	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
 
 	//Lombok to decrease boileplate
