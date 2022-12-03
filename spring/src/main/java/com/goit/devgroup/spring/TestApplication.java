@@ -13,9 +13,20 @@ public class TestApplication {
 		SpringApplication.run(TestApplication.class, args);
 	}
 
-//	@Bean
-//	public PasswordEncoder passwordEncoder() {
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new PasswordEncoder() {
+			@Override
+			public String encode(CharSequence rawPassword) {
+				return rawPassword.hashCode() + "";
+			}
+
+			@Override
+			public boolean matches(CharSequence rawPassword, String encodedPassword) {
+				return encodedPassword.equals(rawPassword.hashCode() + "");
+			}
+		};
 //		return new BCryptPasswordEncoder();
-//	}
+	}
 
 }
