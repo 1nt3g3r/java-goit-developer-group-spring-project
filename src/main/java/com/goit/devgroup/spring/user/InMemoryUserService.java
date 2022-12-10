@@ -42,8 +42,7 @@ public class InMemoryUserService implements UserService {
 
     @Override
     public int countAll() {
-        return 0;
-        //return users.size();
+        return users.size();
     }
 
     public void clear() {
