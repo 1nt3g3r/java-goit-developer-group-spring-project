@@ -35,7 +35,9 @@ public class AuthService {
     }
 
     private Set<String> getUserRoles() {
-        System.out.println("SecurityContextHolder.getContextHolderStrategy().getClass() = " + SecurityContextHolder.getContextHolderStrategy().getClass());
+        System.out.println("SecurityContextHolder.getContextHolderStrategy().getClass() = " +
+                SecurityContextHolder.getContextHolderStrategy().getClass()
+        );
 
         return SecurityContextHolder
                 .getContext()
