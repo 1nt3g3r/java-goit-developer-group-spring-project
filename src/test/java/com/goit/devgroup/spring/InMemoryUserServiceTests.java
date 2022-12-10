@@ -37,4 +37,15 @@ public class InMemoryUserServiceTests {
 
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testDeleteByIdMethodWorksOk() {
+        User user = new User();
+        user.setName("Test user");
+        User savedUser = inMemoryUserService.save(user);
+
+        inMemoryUserService.deleteById(savedUser.getId());
+
+        Assertions.assertEquals(0, inMemoryUserService.countAll());
+    }
 }
